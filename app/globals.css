@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-body text-temple-900 bg-cream;
+  }
+  .dark body {
+    @apply text-temple-200 bg-temple-950;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center gap-2 px-7 py-3 rounded-md font-body text-sm font-medium tracking-wide cursor-pointer transition-all duration-300 border-none;
+  }
+  .btn-primary {
+    @apply bg-saffron text-white hover:bg-saffron-dark;
+    box-shadow: 0 2px 8px rgba(212, 132, 26, 0.15);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(212, 132, 26, 0.25);
+  }
+  .btn-outline {
+    @apply bg-transparent text-saffron border-[1.5px] border-saffron hover:bg-saffron hover:text-white;
+  }
+  .btn-ghost {
+    @apply bg-transparent text-temple-500 px-4 py-2 hover:text-saffron hover:bg-cream-dark;
+  }
+  .dark .btn-ghost {
+    @apply hover:bg-temple-800;
+  }
+  .section-title {
+    @apply font-display font-normal text-temple-900 mb-2 leading-tight;
+    font-size: clamp(28px, 4vw, 42px);
+  }
+  .dark .section-title {
+    @apply text-temple-200;
+  }
+  .section-subtitle {
+    @apply text-temple-500 text-base leading-relaxed max-w-xl;
+  }
+  .card {
+    @apply bg-white border border-temple-200 rounded-xl p-7 transition-all duration-300 cursor-pointer;
+  }
+  .card:hover {
+    @apply border-saffron;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(42, 31, 20, 0.08);
+  }
+  .dark .card {
+    @apply bg-temple-800 border-temple-700;
+  }
+  .dark .card:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  .tag {
+    @apply inline-block px-3 py-1 rounded-full text-[11px] font-semibold tracking-wide uppercase;
+  }
+  .tag-saffron {
+    @apply text-saffron;
+    background: rgba(212, 132, 26, 0.1);
+  }
+  .dark .tag-saffron {
+    background: rgba(232, 160, 64, 0.15);
+  }
+  .tag-maroon {
+    @apply text-maroon;
+    background: rgba(139, 32, 32, 0.1);
+  }
+  .dark .tag-maroon {
+    @apply text-maroon-light;
+    background: rgba(196, 80, 64, 0.15);
+  }
+  .tag-gold {
+    @apply text-gold;
+    background: rgba(184, 148, 46, 0.1);
+  }
+  .dark .tag-gold {
+    @apply text-gold-light;
+    background: rgba(212, 168, 72, 0.15);
+  }
+  .input-field {
+    @apply w-full px-4 py-3 border-[1.5px] border-temple-200 rounded-lg bg-cream text-temple-900 font-body text-[15px] transition-colors duration-200;
+  }
+  .input-field:focus {
+    @apply outline-none border-saffron;
+  }
+  .input-field::placeholder {
+    @apply text-temple-400;
+  }
+  .dark .input-field {
+    @apply border-temple-700 bg-temple-950 text-temple-200;
+  }
+}
+
+@layer utilities {
+  .fade-in-initial {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
